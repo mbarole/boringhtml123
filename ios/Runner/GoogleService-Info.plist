@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>231968723725-2a6c55t223flgrrgnh6a1peg9799uqi3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.231968723725-2a6c55t223flgrrgnh6a1peg9799uqi3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyALgoLL6C-8_Sf3A8pmVWXfGV-RGWWM-Yg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>231968723725</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.boringhtml</string>
+	<key>PROJECT_ID</key>
+	<string>boringhtml-d8c11</string>
+	<key>STORAGE_BUCKET</key>
+	<string>boringhtml-d8c11.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:231968723725:ios:da7041fe75948f32261644</string>
+	<key>DATABASE_URL</key>
+	<string>https://boringhtml-d8c11.firebaseio.com</string>
+</dict>
+</plist>

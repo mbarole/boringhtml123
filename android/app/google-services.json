@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "231968723725",
+    "firebase_url": "https://boringhtml-d8c11.firebaseio.com",
+    "project_id": "boringhtml-d8c11",
+    "storage_bucket": "boringhtml-d8c11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231968723725:android:d77c86badd6ad501261644",
+        "android_client_info": {
+          "package_name": "com.example.boringhtml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231968723725-l1rfqv8c5fbark1sb263hmofb5qots0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjQbj4IvAl7bj32ZUU6WEa-7lHlUQz0qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231968723725-l1rfqv8c5fbark1sb263hmofb5qots0d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "231968723725-2a6c55t223flgrrgnh6a1peg9799uqi3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.boringhtml"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
