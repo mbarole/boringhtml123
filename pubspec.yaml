@@ -51,7 +51,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lottie/scanner1.gif
     - lottie/scaner2.json
 
   # An image asset can refer to one or more resolution-specific "variants", see

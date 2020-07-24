@@ -41,28 +41,32 @@ class _ImageCaptureState extends State<ImageCapture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: <Widget>[
           if (_imageFile != null) ...[
             Image.file(_imageFile),
-            Row(
-              children: <Widget>[
-                FlatButton(
-                  child: Icon(Icons.refresh),
-                  onPressed: _clear,
-                ),
-                FlatButton.icon(
-                  label: Text('Upload'),
-                  icon: Icon(Icons.cloud_upload),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Uploader(file: _imageFile)),
-                    );
-                  },
-                ),
-              ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  FlatButton(
+                    child: Icon(Icons.refresh),
+                    onPressed: _clear,
+                  ),
+                  FlatButton.icon(
+                    label: Text('Upload'),
+                    icon: Icon(Icons.cloud_upload),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Uploader(file: _imageFile)),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ],

@@ -1,11 +1,11 @@
 import 'dart:convert';
 
+import 'package:boringhtml/sizeconfig.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'Results.dart';
 import 'package:lottie/lottie.dart';
 
 class Uploader extends StatefulWidget {
@@ -37,7 +37,7 @@ class _UploaderState extends State<Uploader> {
 
   var list;
   void apiCall(imageURL) async {
-    String url = 'https://4261d9a37c7d.ngrok.io/flutter';
+    String url = 'https://075e1129a8a3.ngrok.io/flutter';
     Map data = {'key1': imageURL};
     String body = json.encode(data);
     http.Response response = await http.post(
@@ -79,36 +79,63 @@ class _UploaderState extends State<Uploader> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: widget.imagesource == null
-          ? Stack(
-              children: <Widget>[
-                Center(
-                  child: Image.file(
-                    widget.file,
-                    width: double.infinity - 30,
-                    height: double.infinity - 30,
+          ? SafeArea(
+              child: Stack(
+                children: <Widget>[
+                  Center(
+                    child: Image.file(
+                      widget.file,
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Lottie.asset(
+                    'lottie/scaner2.json',
+                    width: double.infinity,
+                    height: double.infinity,
                     fit: BoxFit.fill,
                   ),
-                ),
-                Lottie.asset(
-                  'lottie/scaner2.json',
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.fill,
-                ),
-              ],
-            )
-          : Center(
-              child: ListView(
-                children: <Widget>[
-                  Text('Code Generated'),
-                  Container(
-                    color: Colors.grey,
-                    child: Text(list['key4']),
-                  ),
-                  widget.imagesource,
                 ],
+              ),
+            )
+          : SafeArea(
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    Flexible(child: widget.imagesource),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Flexible(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Code Generator',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey,
+                              ),
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                            child: Text(list['key4']),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
     );
