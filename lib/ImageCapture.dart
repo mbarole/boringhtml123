@@ -11,6 +11,13 @@ class ImageCapture extends StatefulWidget {
 }
 
 class _ImageCaptureState extends State<ImageCapture> {
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _imageFile = null;
+  }
+
   File _imageFile;
 
   Future _pickImage(source) async {
@@ -20,18 +27,9 @@ class _ImageCaptureState extends State<ImageCapture> {
     });
   }
 
-  Future<void> _cropImage() async {
-    File cropped = await ImageCropper.cropImage(
-      sourcePath: _imageFile.path,
-    );
-
-    setState(() {
-      _imageFile = cropped ?? _imageFile;
-    });
-  }
-
   void _clear() {
     setState(() => _imageFile = null);
+    _pickImage(ImageSource.camera);
   }
 
   @override
@@ -43,21 +41,6 @@ class _ImageCaptureState extends State<ImageCapture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.photo_camera),
-              onPressed: () => _pickImage(ImageSource.camera),
-            ),
-            IconButton(
-              icon: Icon(Icons.photo_library),
-              onPressed: () => _pickImage(ImageSource.gallery),
-            ),
-          ],
-        ),
-      ),
       body: ListView(
         children: <Widget>[
           if (_imageFile != null) ...[
@@ -65,15 +48,11 @@ class _ImageCaptureState extends State<ImageCapture> {
             Row(
               children: <Widget>[
                 FlatButton(
-                  child: Icon(Icons.crop),
-                  onPressed: _cropImage,
-                ),
-                FlatButton(
                   child: Icon(Icons.refresh),
                   onPressed: _clear,
                 ),
                 FlatButton.icon(
-                  label: Text('Upload to Firebase'),
+                  label: Text('Upload'),
                   icon: Icon(Icons.cloud_upload),
                   onPressed: () {
                     Navigator.push(

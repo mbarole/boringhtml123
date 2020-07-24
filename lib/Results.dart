@@ -11,6 +11,13 @@ class Results extends StatefulWidget {
 
 class _ResultsState extends State<Results> {
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    Navigator.popUntil(context, ModalRoute.withName('/'));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -21,6 +28,12 @@ class _ResultsState extends State<Results> {
             width: 200,
           ),
           Text((widget.htmlCode)),
+          IconButton(
+            icon: Icon(Icons.restore),
+            onPressed: () {
+              dispose();
+            },
+          ),
         ],
       ),
     );
