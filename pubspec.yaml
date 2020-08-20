@@ -52,6 +52,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lottie/scaner2.json
+    - assets/
+  fonts:
+    - family: Annie
+      fonts:
+        - asset: fonts/AnnieUseYourTelescope-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

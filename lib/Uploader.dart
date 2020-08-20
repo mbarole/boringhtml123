@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:boringhtml/sizeconfig.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
@@ -37,7 +36,8 @@ class _UploaderState extends State<Uploader> {
 
   var list;
   void apiCall(imageURL) async {
-    String url = 'https://075e1129a8a3.ngrok.io/flutter';
+    print("Api Hitting");
+    String url = 'https://3350d100651f.ngrok.io/flutter';
     Map data = {'key1': imageURL};
     String body = json.encode(data);
     http.Response response = await http.post(
@@ -79,7 +79,6 @@ class _UploaderState extends State<Uploader> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
       body: widget.imagesource == null
           ? SafeArea(
