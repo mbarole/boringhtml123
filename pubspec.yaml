@@ -19,11 +19,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_cropper: ^1.2.3
   image_picker: ^0.6.7+4
   firebase_storage: ^3.1.6
   firebase_core: ^0.4.5
-  flutter_spinkit: ^4.1.2
   lottie: ^0.4.1
 
 

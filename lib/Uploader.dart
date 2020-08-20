@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lottie/lottie.dart';
 
 class Uploader extends StatefulWidget {
@@ -16,7 +15,6 @@ class Uploader extends StatefulWidget {
 }
 
 class _UploaderState extends State<Uploader> {
-  @override
   void beginUpload() async {
     FirebaseStorage _storage =
         FirebaseStorage(storageBucket: 'gs://boringhtml-d8c11.appspot.com');
